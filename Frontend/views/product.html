@@ -1,0 +1,75 @@
+<div class="card">
+    <div class="card-header text-center">
+        <h1>Product</h1>
+    </div>
+    <div class="card-body">
+        <div>
+            <form class="row g-3 needs-validation" novalidate ng-submit="addProduct()">
+                <div class="col-6">
+                    <label for="validationCustom01" class="form-label fs-5">Product code</label>
+                    <input type="text" class="form-control" id="validationCustom01" ng-model="productInput.maSanPham">
+                    <div class="text-danger mt-1 fs-6" ng-if="checkProduct.maSanPham">
+                        *Product code is required
+                    </div>
+                </div>
+                <div class="col-6">
+                    <label for="validationCustom02" class="form-label fs-5">Product name</label>
+                    <input type="text" class="form-control" id="validationCustom02" ng-model="productInput.tenSanPham">
+                    <div class="text-danger mt-1 fs-6" ng-if="checkProduct.tenSanPham">
+                        *Product name is required !
+                    </div>
+                </div>
+                <div class="col-12">
+                    <select class="form-select fs-5" ng-model="productInput.category" ng-options="category as category.tenDanhMuc for category in categoryList">
+                        <option value="">-- Choose category --</option>
+                    </select>
+                    <div class="text-danger mt-1 fs-6" ng-if="checkProduct.category">
+                        *Category is required !
+                    </div>                   
+                </div>
+                <div class="col-12">
+                    <input type="radio" name="status" value="Active" ng-model="productInput.trangThai" > Active
+                    <input type="radio" name="status" value="Inactive" ng-model="productInput.trangThai"> Inactive
+                    <div class="text-danger mt-1 fs-6" ng-if="checkProduct.trangThai">
+                        *Status is required !
+                    </div>
+                </div>
+                <div class="col-12 d-flex justify-content-center">
+                    <button class="btn btn-success" type="submit">Add</button>
+                </div>
+            </form>
+        </div>
+        <div class="my-2">
+
+            <input type="text">
+        </div>
+        <div class="table-data">
+            <table class="table table-hover">
+                <thead>
+                    <th>Id</th>
+                    <th>Product code</th>
+                    <th>Product name</th>
+                    <th>Status</th>
+                    <th>Creation day</th>
+                    <th>Edit day</th>
+                    <th>Category name</th>
+                    <th>Actions</th>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="product in productList track by $index">
+                        <td>{{product.id}}</td>
+                        <td>{{product.maSanPham}}</td>
+                        <td>{{product.tenSanPham}}</td>
+                        <td>{{product.trangThai}}</td>
+                        <td>{{product.ngayTao|date:"dd/MM/yyyy"}}</td>
+                        <td>{{product.ngaySua|date:"dd/MM/yyyy"}}</td>
+                        <td>{{product.category.tenDanhMuc}}</td>
+                        <td>
+                            <a href="#!/product/detail/{{product.id}}" class="btn btn-warning">Detail</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

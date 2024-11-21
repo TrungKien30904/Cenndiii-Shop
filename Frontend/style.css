@@ -1,0 +1,62 @@
+body{
+    background-image: url(./images/banner/background.png) ;
+    background-size: cover;
+}
+
+.header {
+    width: 100%;
+    z-index: 3;
+    background-color: #e5cea6;
+}
+
+.sticky {
+    position: sticky;
+    top:0;
+}
+
+.card{
+   margin: 20px 0;
+}
+
+.product .table-wrapper,
+.bill .table-wrapper {
+    max-height: 300px; 
+}
+
+.product .table thead,
+.bill .table thead {
+    position: sticky;
+    top: 0;
+    background-color: #fff; 
+    z-index: 1;
+}
+
+.product .table tbody,
+.bill .table tbody {
+    display: block;
+    max-height: 250px; 
+    overflow-y: auto; 
+}
+
+.product .table tbody tr,
+.bill .table tbody tr {
+    display: table;
+    width: 100%; 
+}
+
+.product .table thead, .product .table tbody tr,
+.bill .table thead, .bill .table tbody tr {
+    display: table;
+    table-layout: fixed; 
+    width: 100%;
+}
+
+
+.cart .table th, .cart .table td {
+    word-wrap: break-word;
+}
+
+
+
+
+

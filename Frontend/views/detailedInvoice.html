@@ -1,0 +1,71 @@
+<div class="card">
+    <div class="card-header text-center">
+        <h1>Detailed invoice</h1>
+    </div>
+    <div class="card-body">
+        <div class="search-box">
+            <input type="text" ng-model="keyWord">
+            <button ng-click="search(keyWord)" class="btn btn-success"><i class="bi bi-search"></i></button>
+        </div>
+        <div class="table-data">
+            <table class="table table-hover">
+                <thead>
+                    <th>Id</th>
+                    <th>Phone number</th>
+                    <th>Address</th>
+                    <th>Creation day</th>
+                    <th>Edit day</th>
+                    <th>Status</th>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="bill in billViewList track by $index">
+                        <td>{{bill.id}}</td>
+                        <td>{{bill.soDienThoai}}</td>
+                        <td>{{bill.diaChi}}</td>
+                        <td>{{bill.ngayTao|date:"dd/MM/yyyy"}}</td>
+                        <td>{{bill.ngaySua|date:"dd/MM/yyyy"}}</td>
+                        <td>{{bill.trangThai}}</td>
+                        <td>
+                            <button ng-click="detail(bill.id)" class="btn btn-warning">Detail</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <input type="text" ng-model="totalAllBill">
+    </div>
+</div>
+<div class="card">
+    <div class="card-header ">
+        <h1 class="text-center">Detailed product</h1>
+        <input type="text" ng-model="totalBill">
+    </div>
+    <div class="card-body">
+        <div class="table-data">
+            <table class="table table-hover">
+                <thead>
+                    <th>Id</th>
+                    <th>Product name</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                    <th>Total</th>
+                    <th>Creation day</th>
+                    <th>Edit day</th>
+                    <th>Status</th>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="pd in productDetailsList track by $index">
+                        <td>{{pd.id}}</td>
+                        <td>{{pd.tenSanPham}}</td>
+                        <td>{{pd.soLuongMua}}</td>
+                        <td>{{pd.giaBan}}</td>
+                        <td>{{pd.tongTien}}</td>
+                        <td>{{pd.ngayTao|date:"dd/MM/yyyy"}}</td>
+                        <td>{{pd.ngaySua|date:"dd/MM/yyyy"}}</td>
+                        <td>{{pd.trangThai}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

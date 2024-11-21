@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CenndiiiShop</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+    <!-- MDB -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.2.0/mdb.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body ng-app="myApp">
+    <div class="header sticky" >
+        <ul class="nav justify-content-end d-flex ">
+            <img class="me-auto" src="./images/logos/logo.png" alt="" srcset="">
+            <li class="nav-item align-self-center">
+                <a class="nav-link mx-2 text-black" href="#!/home">Home</a>
+            </li>
+            <li class="nav-item align-self-center">
+                <a class="nav-link mx-2 text-black" href="#!/size/show">Size</a>
+            </li>
+            <li class="nav-item align-self-center">
+                <a class="nav-link mx-2 text-black" href="#!/color/show">Color</a>
+            </li>
+            <li class="nav-item align-self-center">
+                <a class="nav-link mx-2 text-black" href="#!/category/show">Category</a>
+            </li>
+            <li class="nav-item align-self-center">
+                <a class="nav-link mx-2 text-black" href="#!/product/show">Product</a>
+            </li>
+            <li class="nav-item align-self-center">
+                <a class="nav-link mx-2 text-black" href="#!/product-detail/show">Product detail</a>
+            </li>
+            <li class="nav-item align-self-center">
+                <a class="nav-link mx-2 text-black" href="#!/order/show">Oder</a>
+            </li>
+            <li class="nav-item align-self-center">
+                <a class="nav-link mx-2 text-black" href="#!/detailed-invoice/show">Detailed Invoice</a>
+            </li>
+            <li class="nav-item align-self-center">
+                <a class="btn btn-light information mx-2" style="width: 50px;height: 50px;border-radius: 50%;" href="#!/guest-infor"></a>       
+            </li>
+        </ul>
+    </div>
+    <div ng-view class="content container">
+
+    </div>
+    <footer class="text-center text-lg-start text-white" style="background-color: #929fba">
+        <!-- Grid container -->
+        <div class="container p-4 pb-0">
+            <!-- Section: Links -->
+            <section class="">
+                <!--Grid row-->
+                <div class="row">
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                        <h6 class="text-uppercase mb-4 font-weight-bold">
+                            Cenndi
+                        </h6>
+                        <p>
+                            Liên hệ qua hotline hoặc đăng ký form
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+    
+                    <hr class="w-100 clearfix d-md-none" />
+    
+                    <!-- Grid column -->
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                        <h6 class="text-uppercase mb-4 font-weight-bold">Products</h6>
+                        <p>
+                            <a class="text-white">MDBootstrap</a>
+                        </p>
+                        <p>
+                            <a class="text-white">MDWordPress</a>
+                        </p>
+                        <p>
+                            <a class="text-white">BrandFlow</a>
+                        </p>
+                        <p>
+                            <a class="text-white">Bootstrap Angular</a>
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+    
+                    <hr class="w-100 clearfix d-md-none" />
+    
+                    <!-- Grid column -->
+                    <hr class="w-100 clearfix d-md-none" />
+    
+                    <!-- Grid column -->
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+                        <h6 class="text-uppercase mb-4 font-weight-bold">Contact</h6>
+                        <p><i class="fas fa-home mr-3"></i> Tổ dân phố 7, Xuân Phương, Nam Từ Liêm</p>
+                        <p><i class="fas fa-envelope mr-3"></i> cenndii@gmail.com</p>
+                        <p><i class="fas fa-phone mr-3"></i> + 84 396 804 357</p>
+                        <p><i class="fas fa-print mr-3"></i> + 84 396 804 357</p>
+                    </div>
+                    <!-- Grid column -->
+    
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+                        <h6 class="text-uppercase mb-4 font-weight-bold">Follow us</h6>
+    
+                        <!-- Facebook -->
+                        <a class="btn btn-primary btn-floating m-1" style="background-color: #3b5998" href="#!"
+                            role="button"><i class="fab fa-facebook-f"></i></a>
+    
+                        <!-- Twitter -->
+                        <a class="btn btn-primary btn-floating m-1" style="background-color: #55acee" href="#!"
+                            role="button"><i class="fab fa-twitter"></i></a>
+    
+                        <!-- Google -->
+                        <a class="btn btn-primary btn-floating m-1" style="background-color: #dd4b39" href="#!"
+                            role="button"><i class="fab fa-google"></i></a>
+    
+                        <!-- Instagram -->
+                        <a class="btn btn-primary btn-floating m-1" style="background-color: #ac2bac" href="#!"
+                            role="button"><i class="fab fa-instagram"></i></a>
+    
+                        <!-- Linkedin -->
+                        <a class="btn btn-primary btn-floating m-1" style="background-color: #0082ca" href="#!"
+                            role="button"><i class="fab fa-linkedin-in"></i></a>
+                        <!-- Github -->
+                        <a class="btn btn-primary btn-floating m-1" style="background-color: #333333" href="#!"
+                            role="button"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <!--Grid row-->
+            </section>
+            <!-- Section: Links -->
+        </div>
+        <!-- Grid container -->
+    
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+            © 2020 Copyright:
+            <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
+</body>
+<!-- MDB -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.2.0/mdb.umd.min.js"></script>
+
+<!-- link cdn bootstrap -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- link angularJS -->
+<script src="https://code.angularjs.org/1.8.2/angular.min.js"></script>
+
+<!-- link route -->
+<script src="https://code.angularjs.org/1.8.2/angular-route.min.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- JavaScript -->
+<script src="./cenndiiiShop.js"></script>
+<script src="./controller/homeController.js"></script>
+<script src="./controller/sizeController.js"></script>
+<script src="./controller/updateSizeController.js"></script>
+<script src="./controller/colorController.js"></script>
+<script src="./controller/updateColorController.js"></script>
+<script src="./controller/categoryController.js"></script>
+<script src="./controller/updateCategoryController.js"></script>
+<script src="./controller/productController.js"></script>
+<script src="./controller/updateProductController.js"></script>
+<script src="./controller/productDController.js"></script>
+<script src="./controller/updateProductDController.js"></script>
+<script src="./controller/orderController.js"></script>
+<script src="./controller/detailedInvoiceController.js"></script>
+</html>

@@ -1,0 +1,97 @@
+<div class="card">
+    <div class="card-header text-center">
+        <h1>Product detail</h1>
+    </div>
+    <div class="card-body">
+        <div>
+            <form class="row g-3 needs-validation" novalidate ng-submit="addProductDetail()">
+                <div class="col-4">
+                    <select class="form-select fs-5" ng-model="productDetailInput.product" ng-options="product as product.tenSanPham for product in productList">
+                        <option value="">-- Choose product --</option>
+                    </select>
+                    <div class="text-danger mt-1 fs-6" ng-if="checkProductDetail.product">
+                        *Product is required !
+                    </div>                   
+                </div>
+                <div class="col-4">
+                    <select class="form-select fs-5" ng-model="productDetailInput.color" ng-options="color as color.tenMau for color in colorList">
+                        <option value="">-- Choose color --</option>
+                    </select>
+                    <div class="text-danger mt-1 fs-6" ng-if="checkProductDetail.color">
+                        *Color is required !
+                    </div>                   
+                </div>
+                <div class="col-4">
+                    <select class="form-select fs-5" ng-model="productDetailInput.size" ng-options="size as size.tenSize for size in sizeList">
+                        <option value="">-- Choose size --</option>
+                    </select>
+                    <div class="text-danger mt-1 fs-6" ng-if="checkProductDetail.size">
+                        *Size is required !
+                    </div>                   
+                </div>
+                
+                <div class="col-6">
+                    <label for="validationCustom01" class="form-label fs-5">Price</label>
+                    <input type="number" class="form-control" id="validationCustom01" ng-model="productDetailInput.giaBan" 
+                        oninput="this.value = Math.abs(this.value) && this.value >= 1 ? this.value : (value== 1)" >
+                    <div class="text-danger mt-1 fs-6" ng-if="checkProductDetail.giaBan">
+                        *Price is required
+                    </div>
+                </div>
+                <div class="col-6">
+                    <label for="validationCustom01" class="form-label fs-5">Quantity</label>
+                    <input type="number" class="form-control" id="validationCustom01" ng-model="productDetailInput.soLuongTon"
+                        oninput="this.value = Math.abs(this.value) && this.value >= 1 ? this.value : (value== 1)" >
+                    <div class="text-danger mt-1 fs-6" ng-if="checkProductDetail.soLuongTon">
+                        *Quantity is required
+                    </div>
+                </div>
+                <div class="col-12">
+                    <input type="radio" name="status" value="Active" ng-model="productDetailInput.trangThai" > Active
+                    <input type="radio" name="status" value="Inactive" ng-model="productDetailInput.trangThai"> Inactive
+                    <div class="text-danger mt-1 fs-6" ng-if="checkProductDetail.trangThai">
+                        *Status is required !
+                    </div>
+                </div>
+                <div class="col-12 d-flex justify-content-center">
+                    <button class="btn btn-success" type="submit">Add</button>
+                </div>
+            </form>
+        </div>
+        <div class="my-2">
+
+            <input type="text">
+        </div>
+        <div class="table-data">
+            <table class="table table-hover">
+                <thead>
+                    <th>Id</th>
+                    <th>Product name</th>
+                    <th>Color name</th>
+                    <th>Size name</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Creation day</th>
+                    <th>Edit day</th>
+                    <th>Actions</th>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="productDetail in listProductDetails track by $index">
+                        <td>{{productDetail.id}}</td>
+                        <td>{{productDetail.product.tenSanPham}}</td>
+                        <td>{{productDetail.color.tenMau}}</td>
+                        <td>{{productDetail.size.tenSize}}</td>
+                        <td>{{productDetail.giaBan}}</td>
+                        <td>{{productDetail.soLuongTon}}</td>
+                        <td>{{productDetail.trangThai}}</td>
+                        <td>{{productDetail.ngayTao|date:"dd/MM/yyyy"}}</td>
+                        <td>{{productDetail.ngaySua|date:"dd/MM/yyyy"}}</td>
+                        <td>
+                            <a href="#!/product-detail/detail/{{productDetail.id}}" class="btn btn-warning">Detail</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

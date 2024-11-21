@@ -1,0 +1,65 @@
+<div class="card">
+    <div class="card-header text-center">
+        <h1>Size</h1>
+    </div>
+    <div class="card-body">
+        <div>
+            <form class="row g-3 needs-validation" novalidate ng-submit="addSize()">
+                <div class="col-6">
+                    <label for="validationCustom01" class="form-label fs-5">Size code</label>
+                    <input type="text" class="form-control" id="validationCustom01" ng-model="sizeInput.maSize">
+                    <div class="text-danger mt-1 fs-6" ng-if="checkSize.maSize">
+                        *Size code is required
+                    </div>
+                </div>
+                <div class="col-6">
+                    <label for="validationCustom02" class="form-label fs-5">Size name</label>
+                    <input type="text" class="form-control" id="validationCustom02" ng-model="sizeInput.tenSize">
+                    <div class="text-danger mt-1 fs-6" ng-if="checkSize.tenSize">
+                        *Size name is required !
+                    </div>
+                </div>
+                <div class="col-12">
+                    <input type="radio" name="status" value="Active" ng-model="sizeInput.trangThai" > Active
+                    <input type="radio" name="status" value="Inactive" ng-model="sizeInput.trangThai"> Inactive
+                    <div class="text-danger mt-1 fs-6" ng-if="checkSize.trangThai">
+                        *Status is required !
+                    </div>
+                </div>
+                <div class="col-12 d-flex justify-content-center">
+                    <button class="btn btn-success" type="submit">Add</button>
+                </div>
+            </form>
+        </div>
+        <div class="my-2">
+
+            <input type="text">
+        </div>
+        <div class="size-data">
+            <table class="table table-hover">
+                <thead>
+                    <th>Id</th>
+                    <th>Size code</th>
+                    <th>Size name</th>
+                    <th>Status</th>
+                    <th>Creation day</th>
+                    <th>Edit day</th>
+                    <th>Actions</th>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="size in sizeList track by $index">
+                        <td>{{size.id}}</td>
+                        <td>{{size.maSize}}</td>
+                        <td>{{size.tenSize}}</td>
+                        <td>{{size.trangThai}}</td>
+                        <td>{{size.ngayTao|date:"dd/MM/yyyy"}}</td>
+                        <td>{{size.ngaySua|date:"dd/MM/yyyy"}}</td>
+                        <td>
+                            <a href="#!/size/detail/{{size.id}}" class="btn btn-warning">Detail</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

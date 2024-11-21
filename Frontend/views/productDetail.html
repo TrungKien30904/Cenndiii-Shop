@@ -1,0 +1,43 @@
+<div class="card">
+    <div class="card-header text-center">
+        <h1 >{{title}} detail</h1>
+    </div>
+    <div class="card-body">
+        <div>
+            <form class="row g-3 needs-validation" novalidate ng-submit="updateProduct()">
+                <div class="col-6">
+                    <label for="validationCustom01" class="form-label fs-5">{{title}} code</label>
+                    <input type="text" class="form-control" id="validationCustom01" ng-model="productInput.maSanPham">
+                    <div class="text-danger mt-1 fs-6" ng-if="checkProduct.maSanPham">
+                        *{{title}} code is required
+                    </div>
+                </div>
+                <div class="col-6">
+                    <label for="validationCustom02" class="form-label fs-5">{{title}} name</label>
+                    <input type="text" class="form-control" id="validationCustom02" ng-model="productInput.tenSanPham">
+                    <div class="text-danger mt-1 fs-6" ng-if="checkProduct.tenSanPham">
+                        *{{title}} name is required !
+                    </div>
+                </div>
+                <div class="col-12">
+                    <select class="form-select fs-5" ng-model="productInput.category" ng-options="category as category.tenDanhMuc for category in categoryList">
+                        <option value="">-- Choose {{title}} --</option>
+                    </select>
+                    <div class="text-danger mt-1 fs-6" ng-if="checkProduct.category">
+                        *{{title}} is required !
+                    </div>                   
+                </div>
+                <div class="col-12">
+                    <input type="radio" name="status" value="Active" ng-model="productInput.trangThai" > Active
+                    <input type="radio" name="status" value="Inactive" ng-model="productInput.trangThai"> Inactive
+                    <div class="text-danger mt-1 fs-6" ng-if="checkProduct.trangThai">
+                        *Status is required !
+                    </div>
+                </div>
+                <div class="col-12 d-flex justify-content-center">
+                    <button class="btn btn-success" type="submit">Update</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

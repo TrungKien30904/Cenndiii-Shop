@@ -1,0 +1,136 @@
+<div class="card">
+    <div class="row">
+        <div class="col-7 me-4 ">
+            <div class="product p-1">
+            <h3>Product</h3>
+                <div class="table-wrapper">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Product</th>
+                                <th>Color</th>
+                                <th>Size</th>
+                                <th>Price</th>
+                                <th>Quantity</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="pd in productDetailsList track by $index">
+                                <td>{{pd.product.tenSanPham}}</td>
+                                <td>{{pd.color.tenMau}}</td>
+                                <td>{{pd.size.tenSize}}</td>
+                                <td>{{pd.giaBan}}</td>
+                                <td>{{pd.soLuongTon}}</td>
+                                <td>
+                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal{{pd.id}}">
+                                        Add
+                                    </button>
+                                    <form ng-submit="getQuantity(pd.id,quantity)">
+                                        <div class="modal fade" id="exampleModal{{pd.id}}" tabindex="-1"
+                                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Enter quantity</h1>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <input type="number" class="form-control" ng-model="quantity">
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary"
+                                                            data-bs-dismiss="modal">Close</button>
+                                                        <button type="submit" class="btn btn-primary">Save changes</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form> 
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <div class="cart p-1">
+                <h3>Cart</h3>
+                <div class="table-wrapper">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th>Color</th>
+                            <th>Size</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                            <th>Total</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="product in cartList track by $index">
+                            <td>{{product.tenSanPham}}</td>
+                            <td>{{product.tenMau}}</td>
+                            <td>{{product.tenSize}}</td>
+                            <td>{{product.giaBan}}</td>
+                            <td>{{product.soLuong}}</td>
+                            <td>{{product.soLuong * product.giaBan}}</td>
+                            <td>
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                    data-bs-target="#suaSoLuong{{product.id}}">
+                                    Edit quantity
+                                </button>
+                                <form ng-submit="editQuantity(product.id,quantity)">
+                                    <!-- Modal code here -->
+                                </form>
+                                <button ng-click="removeProduct(product.id)" class="btn btn-danger">Remove</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            </div>            
+        </div>
+        <div class="bill col-4 p-1">
+            <button ng-click="createBill()" class="btn btn-success">Create bill</button>
+            <table class="table table-hover table-data">
+                <thead>
+                    <th>Id</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </thead>
+                <tbody>
+                    
+                        <tr ng-repeat="bill in billList track by $index">
+                            <td>{{bill.id}}</td>
+                            <td>{{bill.trangThai}}</td>
+                            <td>
+                                <button ng-click="selectBill(bill.id)" class="btn btn-primary">Select</button>
+                            </td>
+                        </tr>
+                </tbody>
+            </table>
+            <form ng-submit="pay()">
+                <h2 class="text-center">Bill detail</h2>
+                <label for="" class="label-control">Id</label>
+                <input type="text" ng-model="detailBill.id" class="form-control" readonly>
+                <div class="text-danger mt-1 fs-6" ng-if="checkBillSelect.id">
+                    *Invoice not selected !
+                </div>
+                <label for="" class="label-control">Address</label>
+                <input type="text" class="form-control" ng-model="detailBill.diaChi"> 
+                <label for="" class="label-control">Phone number</label>
+                <input type="text" class="form-control" ng-model="detailBill.soDienThoai">
+                <label for="" class="label-control">Tong tien</label>
+                <input type="text" class="form-control" ng-model="total" readonly>
+                <div class="text-danger mt-1 fs-6" ng-if="checkBillSelect.total">
+                    *You haven't purchased !
+                </div>
+                <button type="submit" class="btn btn-primary">Pay</button>
+            </form>
+        </div>
+    </div>
+</div>
