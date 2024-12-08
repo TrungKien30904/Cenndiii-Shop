@@ -10,7 +10,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/product-detail")
+@RequestMapping("/admin/product-detail")
 public class ProductDetailsController {
 
 

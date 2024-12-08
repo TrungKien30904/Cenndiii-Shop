@@ -1,9 +1,7 @@
 package com.example.demo.service;
 
-import com.example.demo.entity.BillView;
-import com.example.demo.entity.DetailedInvoice;
-import com.example.demo.entity.ProductDetails;
-import com.example.demo.entity.ProductView;
+import com.example.demo.DTO.BillView;
+import com.example.demo.DTO.ProductView;
 import com.example.demo.repository.BillRepo;
 import com.example.demo.repository.DetailedInvoiceRepo;
 import org.springframework.beans.factory.annotation.Autowired;

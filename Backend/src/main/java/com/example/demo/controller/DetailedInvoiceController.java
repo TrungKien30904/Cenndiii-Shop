@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/detailed-invoice")
+@RequestMapping("/adminuser/detailed-invoice")
 public class DetailedInvoiceController {
     @Autowired
     DetailedInvoiceService detailedInvoiceService;

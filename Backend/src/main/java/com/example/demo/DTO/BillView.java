@@ -1,4 +1,4 @@
-package com.example.demo.entity;
+package com.example.demo.DTO;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;

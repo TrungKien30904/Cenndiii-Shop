@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/color")
+@RequestMapping("/admin/color")
 public class ColorController {
     @Autowired
     SizeAndColorService sizeAndColorService;
