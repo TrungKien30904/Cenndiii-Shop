@@ -2,7 +2,13 @@ let myApp =  angular.module("myApp",["ngRoute"])
 
 myApp.config(function($routeProvider){
     $routeProvider
-    
+    .when(
+        "/signin",
+        {
+            templateUrl:"views/signIn.html",
+            controller:authController
+        }
+    )
     .when(
         "/home",
         {

@@ -1,5 +1,5 @@
 window.homeController = function($scope,$http){
-    $http.get("http://localhost:8080/home/show").then(function (response) {
+    $http.get("http://localhost:8080/public/home/show").then(function (response) {
         if (response.status == 200) {
             $scope.dayRevenue = response.data.dayRevenue == null ? 0 :response.data.dayRevenue;
             $scope.monthlyRevenue = response.data.monthlyRevenue == null ? 0 :response.data.monthlyRevenue;
